@@ -1,0 +1,10 @@
+.item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: 40px;
+    background: #E2E1E1;
+}
