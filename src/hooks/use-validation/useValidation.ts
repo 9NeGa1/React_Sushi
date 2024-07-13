@@ -13,11 +13,12 @@ const useValidation = (value: string, validations: Validations) => {
       for (const validation in validations) {
         switch (validation) {
           case "minLength": {
-            
-            validations[validation] && value.length < validations[validation]
+            // @ts-ignore
+            validations[validation] && validations && value.length < validations[validation]
               ? setMinLengthError(true)
               : setMinLengthError(false);
             break;
+          
           }
   
           case "isEmpty": {
@@ -25,10 +26,12 @@ const useValidation = (value: string, validations: Validations) => {
             break;
           }
           case "maxLength": {
-            validations[validation] && value.length > validations[validation]
+              // @ts-ignore
+              validations[validation] && validations && value.length > validations[validation]
               ? setMaxLengthError(true)
               : setMaxLengthError(false);
             break;
+          
           }
           case "isEmail": {
             const re =

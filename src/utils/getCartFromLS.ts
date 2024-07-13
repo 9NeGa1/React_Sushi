@@ -1,5 +1,4 @@
-import { MiniItem } from "../components/card-item"
-import { fetchArray } from "../redux/cart/types"
+import { MiniItem } from "../types"
 import { calcTotalPrice } from "./calcTotalPrice"
 
 export const getCartFromLS = () => {

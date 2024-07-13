@@ -6,10 +6,11 @@ import Card from "./pages/card"
 import Cart from "./pages/cart"
 import Delievery from "./pages/delievery"
 import NotFound from "./pages/not-found"
-
 import ScrollToTop from "./components/scrollToTop"
 import PrivateOffice from "./pages/private-office"
 import { useAuth } from "./hooks/use-auth/useAuth"
+import Vacancy from "./pages/vacancy"
+import Contacts from "./pages/contacts"
 
 
 const App = () => {
@@ -25,6 +26,9 @@ const App = () => {
           <Route path="card/:id" element={<Card/>} />
           <Route path="cart" element={<Cart/>} />
           <Route path="delievery" element={<Delievery/>} />
+          <Route path="vacancy" element={<Vacancy/>} />
+          <Route path="contacts" element={<Contacts/>} />
+
           <Route path="lc" element={isAuth ? <PrivateOffice/> : <Navigate to="/" replace />} />
           <Route path="*" element={<NotFound/>} />
 

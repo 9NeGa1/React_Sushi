@@ -11,13 +11,13 @@ const Navigation = () => {
                 <Link className='text-xs xl:text-sm' to="/delievery">Доставка и оплата</Link>
             </li>
             <li>
-                <a className='text-xs xl:text-sm' href="#subscribe">Контакты</a>
+                <Link className='text-xs xl:text-sm' to="/contacts">Контакты</Link>
             </li>
             <li>
                 <a className='text-xs xl:text-sm' href="#features">Бонусы</a>
             </li>
             <li>
-                <a className='text-xs xl:text-sm' href="#">Вакансии</a>
+                <Link className='text-xs xl:text-sm' to="/vacancy">Вакансии</Link>
             </li>
         </ul>
     </nav>
