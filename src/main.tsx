@@ -18,7 +18,7 @@ if (container) {
   root.render(
         
         <NextUIProvider>
-          <BrowserRouter basename="/React_Sushi">
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Provider store={store}>
               <App/>
           </Provider>

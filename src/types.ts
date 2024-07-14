@@ -16,6 +16,7 @@ export type MiniItem = {
     description: string;
     crossedPrice: number;
 
+
   }
 
   export type sortParams = {
@@ -47,6 +48,7 @@ export type Validations = {
   isEmpty: boolean;
   minLength?: number;
   isEmail?: boolean;
-  maxLength?: number; 
+  maxLength?: number;
+  isPhone?: boolean;
 }
 

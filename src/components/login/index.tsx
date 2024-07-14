@@ -18,7 +18,7 @@ const dispatch = useAppDispatch();
     e.preventDefault()
     signInWithEmailAndPassword(auth, email, password)
       .then(({user}) => {
-        console.log(user);
+       
         dispatch(setUser({
           email: user.email,
           id: user.uid,

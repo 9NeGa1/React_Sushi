@@ -6,6 +6,8 @@ const useValidation = (value: string, validations: Validations) => {
     const [minLengthError, setMinLengthError] = useState(false);
     const [maxLengthError, setMaxLengthError] = useState(false);
     const [emailError, setEmailError] = useState(false);
+    const [phoneError, setPhoneError] = useState(false);
+
   
     const [inputValid, setInputValid] = useState(false);
   
@@ -41,6 +43,14 @@ const useValidation = (value: string, validations: Validations) => {
               : setEmailError(true);
             break;
           }
+
+          case "isPhone": {
+            const re = /^((8|\+7)[- ]?)?(\d{3}[- ]?)?[\d\- ]{7,10}$/;
+            re.test(String(value))
+              ? setPhoneError(false)
+              : setPhoneError(true);
+            break;
+          }
         }
       }
     }, [value]);
@@ -52,7 +62,7 @@ const useValidation = (value: string, validations: Validations) => {
         setInputValid(true);
       }
     }, [isEmpty, maxLengthError, minLengthError, emailError])
-    return { isEmpty, minLengthError, maxLengthError, emailError, inputValid };
+    return { isEmpty, minLengthError, maxLengthError, emailError, inputValid, phoneError };
 }
 
 export default useValidation;

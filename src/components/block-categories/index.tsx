@@ -16,7 +16,7 @@ const BlockCategories = () => {
   const {itemsPagination} = useSelector(selectFetchItems)
   const [categoryType, setCategoryType] = useState("Pizzas")
   const [currPage, setCurrPage] = useState(1)
-console.log(currPage)
+
   const itemsPerPage = 3;
   const indexOfLastItem = currPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;

@@ -18,3 +18,7 @@ declare module '*.png' {
 }
 
 declare module "*.module.css";
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}

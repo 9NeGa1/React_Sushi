@@ -21,7 +21,7 @@ export const fetchData = createAsyncThunk<fetchArray[], fetchDataParams>(
     return sortedRes
 
     } catch (error) {
-      console.log(error)
+      console.error(error)
       return []
     }
     
@@ -38,7 +38,7 @@ export const fetchPagination = createAsyncThunk<fetchArray[], fetchPaginationPar
     const result:fetchArray[] = data[0].data
     return result;
     } catch (error) {
-      console.log(error)
+      console.error(error)
       return []
     }  
   }

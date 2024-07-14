@@ -12,7 +12,7 @@ const email = useInput("", { isEmpty: true, minLength: 3, isEmail: true });
 const pass = useInput("", { isEmpty: true, minLength: 6, maxLength: 10 });
 const passAgain = useInput("", { isEmpty: true, minLength: 6, maxLength: 10 });
 
-console.log(name.inputValid, email.inputValid, pass.inputValid)
+
 
 
 const dispatch = useAppDispatch();
@@ -22,7 +22,7 @@ const handleSubmit = (email: string, password: string, e:React.MouseEvent<HTMLBu
   const auth = getAuth()
   createUserWithEmailAndPassword(auth, email, password)
     .then(({user}) => {
-      console.log(user);
+      
       dispatch(setUser({
         
         email: user.email,

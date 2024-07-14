@@ -28,8 +28,10 @@ const CardItem: React.FC<FullItemInfo> = ({
         id,
         nutritionalInfo
 }) => {
-  const [added, setAdded] = useState(false);
 
+  const [added, setAdded] = useState(false);
+  const [scaleFirst, setScaleFirst] = useState(true)
+ 
   const miniitem: MiniItem = {
     id, 
     name,
@@ -40,7 +42,8 @@ const CardItem: React.FC<FullItemInfo> = ({
     count: 0,
     nutritionalInfo,
     description,
-    crossedPrice
+    crossedPrice,
+
   }
 
   const dispatch = useAppDispatch()
@@ -54,6 +57,8 @@ const CardItem: React.FC<FullItemInfo> = ({
       }, 1000);
     
   }
+
+
 
     
   return (
@@ -87,9 +92,9 @@ const CardItem: React.FC<FullItemInfo> = ({
         </span>
       </div>
       <div className='flex items-center gap-2 relative'>
-        {scale && <span className='bg-accent py-[2px] px-2 text-white rounded-sm cursor-pointer text-[12px] md:text-sm font-semibold'> {scale[0] + " см"}</span>}
+        {scale && <span onClick={() => setScaleFirst(true)} className={`${scaleFirst ? "bg-accent text-white": "text-greyText bg-[#F5F5F5]"}  py-[2px] px-2  rounded-sm cursor-pointer text-[12px] md:text-sm font-semibold`}> {scale[0] + " см"}</span>}
         {scale && <PointSVG/>}
-        {scale && <span className='bg-[#F5F5F5] py-[2px] px-2 text-greyText rounded-sm cursor-pointer text-[12px] md:text-sm font-semibold'> {scale[1] + " см"}</span>}
+        {scale && <span onClick={() => setScaleFirst(false) } className={`${!scaleFirst ? "bg-accent text-white": "text-greyText bg-[#F5F5F5]"}  py-[2px] px-2  rounded-sm cursor-pointer text-[12px] md:text-sm font-semibold`}> {scale[1] + " см"}</span>}
         {extraPay && <span className='absolute text-greyText right-0 top-[-30px] text-[15px]'>+{extraPay} ₽</span>}
 
       </div>
